@@ -4,7 +4,7 @@
 
 <ng-container #recipeList *ngIf="!isViewRecipe">
     <div class="list-group text-center" *ngFor="let recipe of recipes">
-        <a href="#" class="list-group-item list-group-item-action recipe" (click)="onGetRecipe(recipe)" data-toggle="tooltip" data-placement="Time"
+        <a class="list-group-item list-group-item-action recipe" (click)="onGetRecipe(recipe)" data-toggle="tooltip" data-placement="Time"
             title="Preparation Time: {{recipe.preparationTime}}">{{ recipe.name }}</a>
     </div>
 </ng-container>

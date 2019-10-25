@@ -6,14 +6,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RecipeService } from './services/recipe.service';
 import { CommonModule } from '@angular/common';
-import { RecipeDetailComponent } from './components/recipe/recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    RoutingModules,
-    RecipeDetailComponent
+    RoutingModules
   ],
   imports: [
     BrowserModule,

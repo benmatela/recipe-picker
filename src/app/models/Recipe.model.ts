@@ -6,4 +6,5 @@ export class Recipe {
     ingredients: Ingredient[]; 
     preparationTime: string; 
     categoryId: number;
+    views: number;
 }

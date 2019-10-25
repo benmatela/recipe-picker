@@ -12,7 +12,7 @@ export class RecipeService {
         { id: 2, name: 'Seafood Seasoning' },
         { id: 3, name: 'Butter' }
       ],
-      preparationTime: '20-25 Mins', categoryId: 1
+      preparationTime: '20-25 Mins', categoryId: 1, views: 0
     },
     {
       id: 2, name: 'Za`atar Popcorn', ingredients: [
@@ -20,7 +20,7 @@ export class RecipeService {
         { id: 2, name: 'Seafood Seasoning' },
         { id: 3, name: 'Butter' }
       ],
-      preparationTime: '5 Mins', categoryId: 2
+      preparationTime: '5 Mins', categoryId: 2, views: 0
     },
     {
       id: 2, name: 'Double Tomato Crostini', ingredients: [
@@ -28,12 +28,20 @@ export class RecipeService {
         { id: 2, name: 'Cherry Tomatoes' },
         { id: 3, name: 'Kosher Salt And Black Pepper' }
       ],
-      preparationTime: '10 Mins', categoryId: 3
+      preparationTime: '10 Mins', categoryId: 3, views: 0
     }
   ]
   constructor() { }
 
   getRecipes(): Recipe[] {
     return this.recipes;
+  }
+
+  addView(recipeId: number): void {
+    this.recipes.forEach(recipe => {
+      if (recipeId === recipe.id) {
+        recipe.views += 1;
+      }
+    });
   }
 }
