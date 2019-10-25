@@ -1,0 +1,40 @@
+<ul class="list-group">
+    <li class="list-group-item text-center main-theme">
+        <h6>Name:</h6>
+        <p>{{ selectedRecipe.name }}</p>
+    </li>
+    <li class="list-group-item text-center main-theme">
+        <h6>Preparation Time:</h6>
+        <p>{{ selectedRecipe.preparationTime }}</p>
+    </li>
+    <li class="list-group-item text-center light-gray">
+        <div class="row ">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h6>Ingredients:</h6>
+                <div class="list-group text-center" *ngFor="let ingredient of selectedRecipe.ingredients">
+                    <p class="list-group-item list-group-item-action recipe">{{ ingredient.name }}</p>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </li>
+</ul>
+<br>
+<div>
+
+</div>
+<div class="row">
+    <div class="col-6">
+        <h6 class="text-center">Suggestions..</h6>
+        <div class="card  main-theme">
+            hello
+        </div>
+    </div>
+    <div class="col-6">
+        <h6 class="text-center">Most Viewed..</h6>
+        <div class="card  main-theme">
+            hello
+        </div>
+    </div>
+</div>
