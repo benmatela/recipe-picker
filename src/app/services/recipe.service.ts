@@ -7,37 +7,45 @@ import { Recipe } from '../models/Recipe.model';
 export class RecipeService {
   recipes: Recipe[] = [
     {
-      id: 1, name: 'Spiced Chicken Wings', ingredients: [
-        { id: 1, name: 'Oil' },
-        { id: 2, name: 'Seafood Seasoning' },
-        { id: 3, name: 'Butter' }
+      id: 1,
+      name: 'Cheese Burger',
+      ingredients: [
+        { id: 1, name: 'Cheddar' },
+        { id: 2, name: 'Patty' },
+        { id: 3, name: 'Lettuce' },
+        { id: 4, name: 'Pickles' }
       ],
-      preparationTime: '20-25 Mins', 
-      categoryId: 1, 
+      preparationTime: '20-25 Mins',
+      categoryId: 1,
       views: 0,
-      imageUrl: 'https://pixabay.com/photos/chicken-wing-chicken-wings-buffalo-1559548'
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png'
     },
     {
-      id: 2, name: 'Za`atar Popcorn', ingredients: [
-        { id: 1, name: 'Oil' },
-        { id: 2, name: 'Seafood Seasoning' },
-        { id: 3, name: 'Butter' }
+      id: 2,
+      name: 'Cake',
+      ingredients: [
+        { id: 1, name: 'Icing Sugar' },
+        { id: 2, name: 'Eggs' },
+        { id: 3, name: 'Milk' }
       ],
-      preparationTime: '5 Mins', 
-      categoryId: 2, 
+      preparationTime: '40-50 Mins',
+      categoryId: 2,
       views: 0,
       imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg'
     },
     {
-      id: 2, name: 'Double Tomato Crostini', ingredients: [
-        { id: 1, name: 'Sun-dried Tomato Spread' },
-        { id: 2, name: 'Cherry Tomatoes' },
-        { id: 3, name: 'Kosher Salt And Black Pepper' }
+      id: 2,
+      name: 'Pizza',
+      ingredients: [
+        { id: 1, name: 'Cheddar' },
+        { id: 2, name: 'Spare Ribs' },
+        { id: 3, name: 'Pineapple' },
+        { id: 4, name: 'Pickles' }
       ],
-      preparationTime: '10 Mins', 
-      categoryId: 3, 
+      preparationTime: '30 Mins',
+      categoryId: 3,
       views: 0,
-      imageUrl: 'https://pixabay.com/photos/food-croûton-bread-1739791'
+      imageUrl: 'https://spoonacular.com/productImages/35507-636x393.jpg'
     }
   ]
   constructor() { }

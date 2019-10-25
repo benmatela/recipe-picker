@@ -1,8 +1,12 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 .main-theme {
-    background-color: orangered;
-    color: white;
+    background-color: orangered !important;
+    color: white !important;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .sticky {

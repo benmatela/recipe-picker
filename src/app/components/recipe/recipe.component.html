@@ -5,13 +5,21 @@
 </div>
 
 <ng-container #recipeList *ngIf="!isViewRecipe">
-    <br>
+    <br><br>
     <div class="list-group text-center" *ngFor="let recipe of recipes">
-        <a class="list-group-item list-group-item-action recipe" (click)="onGetRecipe(recipe)" data-toggle="tooltip"
+        <a class="list-group-item list-group-item-action recipe pointer" (click)="onGetRecipe(recipe)" data-toggle="tooltip"
             data-placement="Time" title="Preparation Time: {{recipe.preparationTime}}">
-            <img [src]="imageUrl" *ngIf="isViewRecipe" width="50" height="50" class="img-thumbnail">
-            <br>
-            <p>{{ recipe.name }}<br><small>Views: {{ recipe.views }}</small></p>
+            <div class="row text-left">
+                <div class="col-4 ">
+                    <img [src]="recipe.imageUrl" width="50" height="50" class="img-thumbnail">
+                </div>
+                <div class="col-4">
+                    <p>{{ recipe.name }}</p>
+                </div>
+                <div class="col-4">
+                    <p><small>Views: {{ recipe.views }}</small></p>
+                </div>
+            </div>
         </a>
     </div>
 </ng-container>
