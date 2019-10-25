@@ -4,3 +4,17 @@
     background-color: orangered;
     color: white;
 }
+
+.sticky {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    display: block;
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 5;
+}

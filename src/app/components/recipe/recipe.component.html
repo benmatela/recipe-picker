@@ -1,1 +1,6 @@
-<p>recipe works!</p>
+<div class="jumbotron text-center mb-1 sticky">Pick A Recipe</div>
+
+<div class="list-group text-center" *ngFor="let recipe of recipes">
+    <a href="#" class="list-group-item list-group-item-action recipe" data-toggle="tooltip" data-placement="Pick Me!"
+        title="Preparation Time: {{recipe.preparationTime}}">{{ recipe.name }}</a>
+</div>
