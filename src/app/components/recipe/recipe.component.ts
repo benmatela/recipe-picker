@@ -9,28 +9,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
-  @HostListener('window:popstate', ['$event'])
-  onPopState(event) {
-    console.log('Back button pressed');
-    this.router.navigate(['']);
-  }
-
   recipes: Recipe[] = [];
   selectedRecipe: Recipe;
 
   isViewRecipe: boolean = false;
 
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event) {
+    this.isViewRecipe = false;
+    this.router.navigate(['recipe']);
+  }
+
   constructor(private recipeService: RecipeService, private router: Router) {
-    this.recipes = this.recipeService.getRecipes();
    }
 
   ngOnInit() {
-    console.log(this.recipes);
+    this.getRecipes();
   }
 
   onGetRecipe(recipe: Recipe) {
     this.selectedRecipe = recipe;
     this.isViewRecipe = true
+  }
+
+  onRecipes() {
+    this.isViewRecipe = false;
+    this.getRecipes();
+  }
+
+  getRecipes() {
+    this.recipes = this.recipeService.getRecipes();
   }
 
 }

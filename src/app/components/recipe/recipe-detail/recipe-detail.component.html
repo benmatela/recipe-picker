@@ -1,37 +1,47 @@
 <ul class="list-group">
     <li class="list-group-item text-center main-theme">
-        <h6>Name:</h6>
-        <p>{{ selectedRecipe.name }}</p>
+        <img [src]="imageUrl" width="100" height="100" class="img-thumbnail">
     </li>
     <li class="list-group-item text-center main-theme">
-        <h6>Preparation Time:</h6>
-        <p>{{ selectedRecipe.preparationTime }}</p>
+        <div class="row">
+            <div class="col-6 text-right">
+                <p><strong>Name:</strong></p>
+            </div>
+            <div class="col-6 text-left">
+                <p>{{selectedRecipe.name}}</p>
+            </div>
+        </div>
     </li>
     <li class="list-group-item text-center main-theme">
-        <h6>Views:</h6>
-        <p>{{ selectedRecipe.views }}</p>
+        <div class="row">
+            <div class="col-6 text-right">
+                <p><strong>Preparation Time:</strong></p>
+            </div>
+            <div class="col-6 text-left">
+                <p>{{selectedRecipe.preparationTime}}</p>
+            </div>
+        </div>
     </li>
-    <li class="list-group-item text-center light-gray">
+    <li class="list-group-item text-center main-theme">
+        <div class="row">
+            <div class="col-6 text-right">
+                <p><strong>Views:</strong></p>
+            </div>
+            <div class="col-6 text-left">
+                <p>{{selectedRecipe.views}}</p>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item text-center main-theme">
         <div class="row ">
             <div class="col-2"></div>
             <div class="col-8">
                 <h6>Ingredients:</h6>
                 <div class="list-group text-center" *ngFor="let ingredient of selectedRecipe.ingredients">
-                    <p class="list-group-item list-group-item-action recipe">{{ ingredient.name }}</p>
+                    <p class="list-group-item list-group-item-action  light-gray">{{ingredient.name}}</p>
                 </div>
             </div>
             <div class="col-2"></div>
         </div>
     </li>
 </ul>
-<br>
-<div class="row">
-    <div class="col-6">
-        <h6 class="text-center">Suggestions..</h6>
-            hello
-    </div>
-    <div class="col-6">
-        <h6 class="text-center">Most Viewed..</h6>
-            hello
-    </div>
-</div>

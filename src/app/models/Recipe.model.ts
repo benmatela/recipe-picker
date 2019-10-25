@@ -7,4 +7,5 @@ export class Recipe {
     preparationTime: string; 
     categoryId: number;
     views: number;
+    imageUrl: string;
 }
