@@ -1,11 +1,11 @@
 <div class="jumbotron text-center sticky">
-    <h3 class="text-center" *ngIf="!isViewRecipe">Pick A Recipe</h3>
+    <h3 class="text-center" *ngIf="!isViewRecipe">Recipes</h3>
     <h3 class="text-center" *ngIf="isViewRecipe">{{ selectedRecipe.name }}</h3>
     <button class="btn btn-dark" *ngIf="isViewRecipe" (click)="onRecipes()">Back To Recipes</button>
 </div>
 
 <ng-container #recipeList *ngIf="!isViewRecipe">
-    <br><br>
+    <br>
     <div class="list-group text-center" *ngFor="let recipe of recipes">
         <a class="list-group-item list-group-item-action recipe pointer" (click)="onGetRecipe(recipe)" data-toggle="tooltip"
             data-placement="Time" title="Preparation Time: {{recipe.preparationTime}}">
