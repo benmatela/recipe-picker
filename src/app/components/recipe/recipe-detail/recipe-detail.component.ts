@@ -12,7 +12,7 @@ import { isNullOrUndefined } from 'util';
 export class RecipeDetailComponent implements OnInit {
   @Input() selectedRecipe: Recipe;
   recipies: Recipe[] = [];
-  imageUrl: string = '';
+  suggestions: Recipe[] = [];
 
   constructor(private router: Router, private recipeService: RecipeService) {
    }
@@ -22,11 +22,17 @@ export class RecipeDetailComponent implements OnInit {
       this.router.navigate(['recipe']);
     }
     this.recipeService.addView(this.selectedRecipe);
-    this.imageUrl = this.selectedRecipe.imageUrl;
+    this.suggestions = this.onGetSuggestions();
+
+    console.log(this.suggestions);
   }
 
   onRecipes() {
     this.router.navigate(['recipe']);
+  }
+
+  onGetSuggestions() {
+    return this.recipeService.getSuggestion(this.selectedRecipe);
   }
 
 }

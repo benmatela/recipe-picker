@@ -61,4 +61,18 @@ export class RecipeService {
       }
     });
   }
+
+  getSuggestion(selectedRecipe: Recipe): Recipe[] {
+    let result: Recipe[] = [];
+    this.recipes.forEach(recipe => {
+      recipe.ingredients.forEach((ingredient, index) => {
+        if (ingredient.name === selectedRecipe.ingredients[index].name) {
+          if (recipe !== selectedRecipe && !result.includes(recipe)) {
+            result.push(recipe);
+          }
+        }
+      });
+    });
+    return result;
+  }
 }
