@@ -65,13 +65,24 @@ export class RecipeService {
   getSuggestion(selectedRecipe: Recipe): Recipe[] {
     let result: Recipe[] = [];
     this.recipes.forEach(recipe => {
-      recipe.ingredients.forEach((ingredient, index) => {
-        if (ingredient.name === selectedRecipe.ingredients[index].name) {
-          if (recipe !== selectedRecipe && !result.includes(recipe)) {
-            result.push(recipe);
+
+      if (recipe.ingredients.length < selectedRecipe.ingredients.length) {
+        recipe.ingredients.forEach((ingredient, index) => {
+          if (ingredient.name === selectedRecipe.ingredients[index].name) {
+            if (recipe !== selectedRecipe && !result.includes(recipe)) {
+              result.push(recipe);
+            }
           }
-        }
-      });
+        });
+      } else {
+        selectedRecipe.ingredients.forEach((ingredient, index) => {
+          if (ingredient.name === recipe.ingredients[index].name) {
+            if (recipe !== selectedRecipe && !result.includes(recipe)) {
+              result.push(recipe);
+            }
+          }
+        });
+      }
     });
     return result;
   }
