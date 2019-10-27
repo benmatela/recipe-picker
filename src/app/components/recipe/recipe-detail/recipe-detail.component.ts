@@ -19,7 +19,7 @@ export class RecipeDetailComponent implements OnInit {
 
   ngOnInit() {
     if (isNullOrUndefined(this.selectedRecipe)) {
-      this.router.navigate(['recipe']);
+      this.onRecipes();
     }
     this.recipeService.addView(this.selectedRecipe);
     this.suggestions = this.onGetSuggestions();
@@ -31,6 +31,15 @@ export class RecipeDetailComponent implements OnInit {
 
   onGetSuggestions() {
     return this.recipeService.getSuggestion(this.selectedRecipe);
+  }
+
+  onSelectSuggestion(suggestion: Recipe) {
+    this.selectedRecipe = null;
+    this.suggestions = [];
+    
+    this.selectedRecipe = suggestion;
+    this.suggestions = this.onGetSuggestions();
+    this.recipeService.addView(this.selectedRecipe);
   }
 
 }

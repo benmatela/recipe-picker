@@ -34,7 +34,7 @@ export class RecipeService {
       imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg'
     },
     {
-      id: 2,
+      id: 3,
       name: 'Pizza',
       ingredients: [
         { id: 1, name: 'Cheddar' },
@@ -46,6 +46,20 @@ export class RecipeService {
       categoryId: 3,
       views: 0,
       imageUrl: 'https://spoonacular.com/productImages/35507-636x393.jpg'
+    },
+    {
+      id: 4,
+      name: 'Gatsby',
+      ingredients: [
+        { id: 1, name: 'Cheddar' },
+        { id: 2, name: 'Polony' },
+        { id: 3, name: 'Lettuce' },
+        { id: 4, name: 'Onion' }
+      ],
+      preparationTime: '30 Mins',
+      categoryId: 3,
+      views: 0,
+      imageUrl: 'https://spoonacular.com/productImages/355010-636x393.jpg'
     }
   ]
   constructor() { }
@@ -64,8 +78,8 @@ export class RecipeService {
 
   getSuggestion(selectedRecipe: Recipe): Recipe[] {
     let result: Recipe[] = [];
-    this.recipes.forEach(recipe => {
 
+    this.recipes.forEach(recipe => {
       if (recipe.ingredients.length < selectedRecipe.ingredients.length) {
         recipe.ingredients.forEach((ingredient, index) => {
           if (ingredient.name === selectedRecipe.ingredients[index].name) {

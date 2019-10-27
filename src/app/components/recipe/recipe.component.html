@@ -1,6 +1,5 @@
 <div class="jumbotron text-center sticky">
-    <h3 class="text-center" *ngIf="!isViewRecipe">Recipes</h3>
-    <h3 class="text-center" *ngIf="isViewRecipe">{{ selectedRecipe.name }}</h3>
+    <h3 class="text-center">Recipes</h3>
     <button class="btn btn-dark" *ngIf="isViewRecipe" (click)="onRecipes()">Back To Recipes</button>
 </div>
 

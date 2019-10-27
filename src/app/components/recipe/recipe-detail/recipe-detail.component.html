@@ -1,16 +1,7 @@
-<ul class="list-group">
+<ul class="list-group text-center">
     <li class="list-group-item text-center main-theme">
-        <img [src]="selectedRecipe.imageUrl" width="100" height="100" class="img-thumbnail">
-    </li>
-    <li class="list-group-item text-center main-theme">
-        <div class="row">
-            <div class="col-6 text-right">
-                <p><strong>Name:</strong></p>
-            </div>
-            <div class="col-6 text-left">
-                <p>{{selectedRecipe.name}}</p>
-            </div>
-        </div>
+        <h5>{{selectedRecipe.name}}</h5>
+        <img [src]="selectedRecipe.imageUrl" width="100" height="100" class="img-thumbnail mb-2 mt-2">
     </li>
     <li class="list-group-item text-center main-theme">
         <div class="row">
@@ -49,7 +40,8 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h6>Suggestions (based on your selection):</h6>
-                <div class="list-group text-center" *ngFor="let recipe of suggestions">
+                <div class="list-group text-center suggestion" (click)="onSelectSuggestion(recipe)"
+                    *ngFor="let recipe of suggestions">
                     <p class="list-group-item list-group-item-action light-gray">{{recipe.name}} &nbsp;&nbsp;
                         [<small *ngFor="let ingredient of recipe.ingredients"
                             class="text-right">{{ ingredient.name }}&nbsp;</small>]
