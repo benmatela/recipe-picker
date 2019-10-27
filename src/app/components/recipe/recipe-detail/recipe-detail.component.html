@@ -38,7 +38,22 @@
             <div class="col-8">
                 <h6>Ingredients:</h6>
                 <div class="list-group text-center" *ngFor="let ingredient of selectedRecipe.ingredients">
-                    <p class="list-group-item list-group-item-action  light-gray">{{ingredient.name}}</p>
+                    <p class="list-group-item list-group-item-action light-gray">{{ingredient.name}}</p>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </li>
+    <li class="list-group-item text-center main-theme" *ngIf="suggestions.length > 0">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h6>Suggestions (based on your selection):</h6>
+                <div class="list-group text-center" *ngFor="let recipe of suggestions">
+                    <p class="list-group-item list-group-item-action light-gray">{{recipe.name}} &nbsp;&nbsp;
+                        [<small *ngFor="let ingredient of recipe.ingredients"
+                            class="text-right">{{ ingredient.name }}&nbsp;</small>]
+                    </p>
                 </div>
             </div>
             <div class="col-2"></div>

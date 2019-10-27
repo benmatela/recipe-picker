@@ -23,8 +23,6 @@ export class RecipeDetailComponent implements OnInit {
     }
     this.recipeService.addView(this.selectedRecipe);
     this.suggestions = this.onGetSuggestions();
-
-    console.log(this.suggestions);
   }
 
   onRecipes() {
