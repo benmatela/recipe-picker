@@ -8,4 +8,5 @@ export class Recipe {
     categoryId: number;
     views: number;
     imageUrl: string;
+    lastViewed: number;
 }

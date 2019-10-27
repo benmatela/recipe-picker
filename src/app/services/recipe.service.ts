@@ -18,7 +18,8 @@ export class RecipeService {
       preparationTime: '20-25 Mins',
       categoryId: 1,
       views: 0,
-      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png'
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png',
+      lastViewed: 0
     },
     {
       id: 2,
@@ -31,7 +32,8 @@ export class RecipeService {
       preparationTime: '40-50 Mins',
       categoryId: 2,
       views: 0,
-      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg'
+      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg',
+      lastViewed: 0
     },
     {
       id: 3,
@@ -45,7 +47,8 @@ export class RecipeService {
       preparationTime: '30 Mins',
       categoryId: 3,
       views: 0,
-      imageUrl: 'https://spoonacular.com/productImages/35507-636x393.jpg'
+      imageUrl: 'https://spoonacular.com/productImages/35507-636x393.jpg',
+      lastViewed: 0
     },
     {
       id: 4,
@@ -59,7 +62,8 @@ export class RecipeService {
       preparationTime: '30 Mins',
       categoryId: 3,
       views: 0,
-      imageUrl: 'https://spoonacular.com/productImages/355010-636x393.jpg'
+      imageUrl: 'https://spoonacular.com/productImages/355010-636x393.jpg',
+      lastViewed: 0
     }
   ]
   constructor() { }
@@ -72,6 +76,7 @@ export class RecipeService {
     this.recipes.forEach(recipe => {
       if (recipeInput === recipe) {
         recipe.views += 1;
+        recipe.lastViewed = Date.now();
       }
     });
   }

@@ -36,7 +36,6 @@ export class RecipeDetailComponent implements OnInit {
   onSelectSuggestion(suggestion: Recipe) {
     this.selectedRecipe = null;
     this.suggestions = [];
-    
     this.selectedRecipe = suggestion;
     this.suggestions = this.onGetSuggestions();
     this.recipeService.addView(this.selectedRecipe);

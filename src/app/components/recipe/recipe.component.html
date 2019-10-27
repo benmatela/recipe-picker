@@ -16,7 +16,7 @@
                     <p>{{ recipe.name }}</p>
                 </div>
                 <div class="col-4">
-                    <p><small>Views: {{ recipe.views }}</small></p>
+                    <p><small>Views: {{ recipe.views }}</small><small *ngIf="recipe.lastViewed > 0">&nbsp;({{recipe.lastViewed | timeAgo}})</small></p>
                 </div>
             </div>
         </a>

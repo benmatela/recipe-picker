@@ -1,22 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 import { AppRoutingModule, RoutingModules } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RecipeService } from './services/recipe.service';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    RoutingModules
+    RoutingModules,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    CommonModule
+    AppRoutingModule
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]

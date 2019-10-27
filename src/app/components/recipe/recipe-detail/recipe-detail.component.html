@@ -19,7 +19,7 @@
                 <p><strong>Views:</strong></p>
             </div>
             <div class="col-6 text-left">
-                <p>{{selectedRecipe.views}}</p>
+                <p>{{selectedRecipe.views}} <small *ngIf="selectedRecipe.lastViewed > 0">&nbsp;({{selectedRecipe.lastViewed | timeAgo}})</small></p>
             </div>
         </div>
     </li>
